@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster - Kurum Yönetimi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">
+                    <i class="fas fa-tasks"></i>
+                    TaskMaster
+                </h1>
+                <nav class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        Ana Sayfa
+                    </a>
+                    <a href="add-task.html" class="nav-link">
+                        <i class="fas fa-plus"></i>
+                        Görev Ekle
+                    </a>
+                    <a href="steps.html" class="nav-link">
+                        <i class="fas fa-list-ol"></i>
+                        Adımlar
+                    </a>
+                    <a href="organizations.html" class="nav-link active">
+                        <i class="fas fa-building"></i>
+                        Kurumlar
+                    </a>
+                    <a href="add-organization.html" class="nav-link">
+                        <i class="fas fa-plus-circle"></i>
+                        Kurum Ekle
+                    </a>
+                </nav>
+                <div class="mobile-menu-toggle"  id="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Organizations Page -->
+            <div class="page active" id="organizations-page">
+                <div class="page-header">
+                    <h2>Kurum Yönetimi</h2>
+                    <p>Kurumlarınızı ekleyin, düzenleyin ve silin</p>
+                </div>
+
+                <div class="organizations-container">
+                    <div class="organizations-header">
+                        <button class="btn btn-primary" id="add-org-btn">
+                            <i class="fas fa-plus"></i>
+                            Yeni Kurum Ekle
+                        </button>
+                    </div>
+
+                    <div class="organizations-list">
+                        <div class="organization-item">
+                            <div class="org-info">
+                                <h4>ABC Şirketi</h4>
+                            </div>
+                            <div class="org-actions">
+                                <button class="btn btn-icon btn-edit" title="Düzenle">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-icon btn-delete" title="Sil">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="organization-item">
+                            <div class="org-info">
+                                <h4>XYZ Ltd.</h4>
+                            </div>
+                            <div class="org-actions">
+                                <button class="btn btn-icon btn-edit" title="Düzenle">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-icon btn-delete" title="Sil">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Organization Modal -->
+    <div class="modal" id="add-org-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Yeni Kurum Ekle</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="new-org-name">Kurum Adı</label>
+                    <input type="text" id="new-org-name" placeholder="Kurum adını girin">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-action="cancel">İptal</button>
+                <button class="btn btn-primary" data-action="save">Ekle</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

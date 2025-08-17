@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster - Görev Adımları</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">
+                    <i class="fas fa-tasks"></i>
+                    TaskMaster
+                </h1>
+                <nav class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        Ana Sayfa
+                    </a>
+                    <a href="add-task.html" class="nav-link">
+                        <i class="fas fa-plus"></i>
+                        Görev Ekle
+                    </a>
+                    <a href="steps.html" class="nav-link active">
+                        <i class="fas fa-list-ol"></i>
+                        Adımlar
+                    </a>
+                    <a href="organizations.html" class="nav-link">
+                        <i class="fas fa-building"></i>
+                        Kurumlar
+                    </a>
+                    <a href="add-organization.html" class="nav-link">
+                        <i class="fas fa-plus-circle"></i>
+                        Kurum Ekle
+                    </a>
+                </nav>
+                <div class="mobile-menu-toggle"  id="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Steps Page -->
+            <div class="page active" id="steps-page">
+                <div class="page-header">
+                    <h2>Görev Adımları</h2>
+                    <p>Görev detaylarını ve adımları yönetin</p>
+                </div>
+
+                <div class="steps-container">
+                    <div class="task-info">
+                        <h3>ABC Şirketi - Proje Raporu Hazırla</h3>
+                        <div class="task-meta">
+                            <span class="meta-item">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                Önemli ve Acil
+                            </span>
+                            <span class="meta-item">
+                                <i class="fas fa-list-ol"></i>
+                                5 adım
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Add Step Section -->
+                    <div class="add-step-section">
+                        <h4>Yeni Adım Ekle</h4>
+                        <form class="add-step-form">
+                            <input type="text" placeholder="Adım adını girin" required>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-plus"></i>
+                                Adım Ekle
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="steps-list">
+                        <div class="step-item completed">
+                            <div class="step-content">
+                                <span class="step-number">1</span>
+                                <span class="step-text">Proje kapsamını belirle</span>
+                            </div>
+                            <div class="step-actions">
+                                <button class="btn btn-icon btn-edit" title="Adım adını değiştir">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-icon btn-complete" title="Tamamlandı" disabled>
+                                    <i class="fas fa-check"></i>
+                                </button>
+                                <button class="btn btn-icon btn-delete" title="Adımı sil">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="step-item completed">
+                            <div class="step-content">
+                                <span class="step-number">2</span>
+                                <span class="step-text">Veri toplama</span>
+                            </div>
+                            <div class="step-actions">
+                                <button class="btn btn-icon btn-edit" title="Adım adını değiştir">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-icon btn-complete" title="Tamamlandı" disabled>
+                                    <i class="fas fa-check"></i>
+                                </button>
+                                <button class="btn btn-icon btn-delete" title="Adımı sil">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="step-item completed">
+                            <div class="step-content">
+                                <span class="step-number">3</span>
+                                <span class="step-text">Analiz yap</span>
+                            </div>
+                            <div class="step-actions">
+                                <button class="btn btn-icon btn-edit" title="Adım adını değiştir">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-icon btn-complete" title="Tamamlandı" disabled>
+                                    <i class="fas fa-check"></i>
+                                </button>
+                                <button class="btn btn-icon btn-delete" title="Adımı sil">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-content">
+                                <span class="step-number">4</span>
+                                <span class="step-text">Rapor yaz</span>
+                            </div>
+                            <div class="step-actions">
+                                <button class="btn btn-icon btn-edit" title="Adım adını değiştir">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-icon btn-complete" title="Tamamlandı">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                                <button class="btn btn-icon btn-delete" title="Adımı sil">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-content">
+                                <span class="step-number">5</span>
+                                <span class="step-text">Gözden geçir ve teslim et</span>
+                            </div>
+                            <div class="step-actions">
+                                <button class="btn btn-icon btn-edit" title="Adım adını değiştir">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-icon btn-complete" title="Tamamlandı">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                                <button class="btn btn-icon btn-delete" title="Adımı sil">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Edit Step Modal -->
+    <div class="modal" id="edit-step-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Adım Adını Değiştir</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="new-step-name">Yeni Adım Adı</label>
+                    <input type="text" id="new-step-name" placeholder="Adım adını girin">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-action="cancel">İptal</button>
+                <button class="btn btn-primary" data-action="save">Kaydet</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
