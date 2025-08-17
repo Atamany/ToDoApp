@@ -1,0 +1,41 @@
+﻿@using ToDoApp.DAL.Entities;
+@model List<Organisation>;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div class="page active" id="organizations-page">
+    <div class="page-header">
+        <h2>Kurum Yönetimi</h2>
+        <p>Kurumlarınızı ekleyin, düzenleyin ve silin</p>
+    </div>
+
+    <div class="organizations-container">
+        <div class="organizations-header">
+            <a href="~/Organisation/AddOrganisation/" class="btn btn-primary">
+                <i class="fas fa-plus"></i>
+                Yeni Kurum Ekle
+            </a>
+        </div>
+
+        <div class="organizations-list">
+            @foreach (var item in Model)
+            {
+                <div class="organization-item">
+                    <div class="org-info">
+                    <h4>@item.OrganisationName</h4>
+                </div>
+                <div class="org-actions">
+                    <a href="~/Organisation/UpdateOrganisation/@item.OrganisationId" class="btn btn-icon btn-edit" title="Düzenle">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <a href="~/Organisation/DeleteOrganisation/@item.OrganisationId" class="btn btn-icon btn-delete" title="Sil">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>

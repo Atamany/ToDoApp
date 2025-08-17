@@ -1,0 +1,38 @@
+﻿@model ToDoApp.DAL.Entities.Organisation
+@{
+    ViewData["Title"] = "UpdateOrganisation";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div class="page active" id="add-organization-page">
+    <div class="page-header">
+        <h2>Yeni Kurum Ekle</h2>
+        <p>Organizasyonunuza yeni kurumlar ekleyin</p>
+    </div>
+
+    <div class="form-container">
+        <form class="form-control" method="post">
+            <div class="form-group">
+                <input type="hidden" asp-for="OrganisationId" value="@Model.OrganisationId" />
+                <label for="OrganisationName">
+                    <i class="fas fa-building"></i>
+                    Kurum Adı
+                </label>
+                <input type="text" id="OrganisationName" asp-for="OrganisationName" placeholder="Kurum adını girin..." required />
+
+            </div>
+            <div class="form-actions">
+                <a href="~/Organisation/Index" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i>
+                    Geri Dön
+                </a>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save"></i>
+                    Kurumu Kaydet
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+

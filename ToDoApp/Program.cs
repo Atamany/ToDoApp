@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using ToDoApp.DAL.Context;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -22,6 +25,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Mission}/{action=Index}/{id?}"
+);
 
 app.Run();

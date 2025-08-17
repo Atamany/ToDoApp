@@ -1,0 +1,158 @@
+﻿@model List<MissionViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div class="page active" id="home-page">
+    <div class="page-header">
+        <h2>Görevleriniz</h2>
+        <p>Tüm görevlerinizi önem ve aciliyet durumlarına göre görüntüleyin</p>
+
+        <!-- Color Legend -->
+        <div class="color-legend">
+            <h4>Renk Kodları</h4>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <div class="legend-dot urgent"></div>
+                    <span>Acil + Önemli</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot blue"></div>
+                    <span>Acil + Önemsiz</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot not-urgent"></div>
+                    <span>Acil Olmayan + Önemli</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot yellow"></div>
+                    <span>Acil Olmayan + Önemsiz</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tasks-table">
+        <div class="table-header">
+            <div class="header-cell">Durum</div>
+            <div class="header-cell">Görev Adı</div>
+            <div class="header-cell">Kurum</div>
+            <div class="header-cell">İlerleme</div>
+            <div class="header-cell">İşlemler</div>
+        </div>
+
+        <div class="tasks-list">
+            @foreach (var item in Model)
+            {
+                if (item.Importance == 4)
+                {
+                    <div class="task-row important-urgent">
+                        <div class="task-status">
+                            <div class="status-dot urgent"></div>
+                        </div>
+                        <div class="task-name">
+                            <h4>@item.MissionTitle</h4>
+                        </div>
+                        <div class="task-org">
+                            <span class="organization-tag">@item.OrganisationName</span>
+                        </div>
+                        <div class="task-progress">
+                            <span class="progress-info">@item.DoneStepCount/@item.StepCount</span>
+                        </div>
+                        <div class="task-actions">
+                            <a href="~/Mission/StepDetail/@item.MissionId" class="btn btn-primary">Adımları Gör</a>
+                            <a href="~/Mission/UpdateMission/@item.MissionId" class="btn btn-icon btn-edit" title="Görevi Düzenle">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a href="~/Mission/DeleteMission/@item.MissionId" class="btn btn-icon btn-delete" title="Görevi Sil">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </div>
+                    </div>
+                }
+
+                if (item.Importance == 3)
+                {
+                    <div class="task-row not-important-urgent">
+                        <div class="task-status">
+                            <div class="status-dot blue"></div>
+                        </div>
+                        <div class="task-name">
+                            <h4>@item.MissionTitle</h4>
+                        </div>
+                        <div class="task-org">
+                            <span class="organization-tag">@item.OrganisationName</span>
+                        </div>
+                        <div class="task-progress">
+                            <span class="progress-info">@item.DoneStepCount/@item.StepCount</span>
+                        </div>
+                        <div class="task-actions">
+                            <a href="~/Mission/StepDetail/@item.MissionId" class="btn btn-primary">Adımları Gör</a>
+                            <a href="~/Mission/UpdateMission/@item.MissionId" class="btn btn-icon btn-edit" title="Görevi Düzenle">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a href="~/Mission/DeleteMission/@item.MissionId" class="btn btn-icon btn-delete" title="Görevi Sil">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </div>
+                    </div>
+                }
+                if (item.Importance == 2)
+                {
+                    <div class="task-row important-not-urgent">
+                        <div class="task-status">
+                            <div class="status-dot not-urgent"></div>
+                        </div>
+                        <div class="task-name">
+                            <h4>@item.MissionTitle</h4>
+                        </div>
+                        <div class="task-org">
+                            <span class="organization-tag">@item.OrganisationName</span>
+                        </div>
+                        <div class="task-progress">
+                            <span class="progress-info">@item.DoneStepCount/@item.StepCount</span>
+                        </div>
+                        <div class="task-actions">
+                            <a href="~/Mission/StepDetail/@item.MissionId" class="btn btn-primary">Adımları Gör</a>
+                            <a href="~/Mission/UpdateMission/@item.MissionId" class="btn btn-icon btn-edit" title="Görevi Düzenle">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a href="~/Mission/DeleteMission/@item.MissionId" class="btn btn-icon btn-delete" title="Görevi Sil">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </div>
+                    </div>
+                }
+                if (item.Importance == 1)
+                {
+                    <div class="task-row not-important-not-urgent">
+                        <div class="task-status">
+                            <div class="status-dot yellow"></div>
+                        </div>
+                        <div class="task-name">
+                            <h4>@item.MissionTitle</h4>
+                        </div>
+                        <div class="task-org">
+                            <span class="organization-tag">@item.OrganisationName</span>
+                        </div>
+                        <div class="task-progress">
+                            <span class="progress-info">@item.DoneStepCount/@item.StepCount</span>
+                        </div>
+                        <div class="task-actions">
+                            <a href="~/Mission/StepDetail/@item.MissionId" class="btn btn-primary">Adımları Gör</a>
+                            <a href="~/Mission/UpdateMission/@item.MissionId" class="btn btn-icon btn-edit" title="Görevi Düzenle">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a href="~/Mission/DeleteMission/@item.MissionId" class="btn btn-icon btn-delete" title="Görevi Sil">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
