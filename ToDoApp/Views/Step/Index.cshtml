@@ -1,0 +1,76 @@
+﻿@using ToDoApp.DAL.Entities
+@model List<Step>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+    var count = 0;
+}
+
+<div class="page active" id="steps-page">
+    <div class="page-header">
+        <h2>Görev Adımları</h2>
+        <p>Görev detaylarını ve adımları yönetin</p>
+    </div>
+
+    <div class="steps-container">
+        <div class="task-info">
+            <h3>@ViewBag.Organization</h3>
+        </div>
+
+        <div class="organizations-header">
+            <a href="~/Step/AddStep/@ViewBag.MissionId" class="btn btn-primary">
+                <i class="fas fa-plus"></i>
+                Yeni Adım Ekle
+            </a>
+        </div>
+
+        <div class="steps-list">
+            @foreach (var item in Model)
+            {
+                ++count;
+                if (item.IsCompleted)
+                {
+                    <div class="step-item completed">
+                        <div class="step-content">
+                            <span class="step-number">@count</span>
+                            <span class="step-text">@item.StepName</span>
+                        </div>
+                        <div class="step-actions">
+                            <a href="~/Step/UpdateStep/@item.StepId" class="btn btn-icon btn-edit" title="Adım adını değiştir">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a href="~/Step/UndoneStep/@item.StepId" class="btn btn-icon btn-secondary" title="Tamamlanmadı olarak işaretle">
+                                <i class="fas fa-xmark"></i>
+                            </a>
+                            <a href="~/Step/DeleteStep/@item.StepId" class="btn btn-icon btn-delete" title="Adımı sil">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </div>
+                    </div>
+                }
+                if (!item.IsCompleted)
+                {
+
+                    <div class="step-item">
+                        <div class="step-content">
+                            <span class="step-number">@count</span>
+                            <span class="step-text">@item.StepName</span>
+                        </div>
+                        <div class="step-actions">
+                            <a href="~/Step/UpdateStep/@item.StepId" class="btn btn-icon btn-edit" title="Adım adını değiştir">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a href="~/Step/DoneStep/@item.StepId" class="btn btn-icon btn-complete" title="Tamamlandı olarak İşaretle">
+                                <i class="fas fa-check"></i>
+                            </a>
+                            <a href="~/Step/DeleteStep/@item.StepId" class="btn btn-icon btn-delete" title="Adımı sil">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+

@@ -7,5 +7,6 @@
         public int Importance { get; set; }
         public virtual Organisation Organisation { get; set; }
         public List<Step> Steps { get; set; }
+        public bool isActive { get; set; }
     }
 }
