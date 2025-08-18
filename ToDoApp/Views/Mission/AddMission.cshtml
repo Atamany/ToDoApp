@@ -1,0 +1,64 @@
+﻿@using ToDoApp.Models
+@model MissionAddViewModel
+@{
+    ViewData["Title"] = "AddMission";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<div class="page active" id="add-task-page">
+    <div class="page-header">
+        <h2>Yeni Görev Ekle</h2>
+        <p>Yeni bir görev oluşturun ve organize edin</p>
+    </div>
+
+    <div class="form-container">
+        <form class="form-control" method="post">
+            <div class="form-group">
+                <label for="task-name">Görev Adı</label>
+                <input type="text" id="task-name" asp-for="Title" placeholder="Görev adını girin" required>
+            </div>
+
+            <div class="form-group">
+                <label for="step-count">Adım Sayısı</label>
+                <input type="number" id="step-count" asp-for="Steps" min="1" placeholder="Kaç adım olacak?" required>
+            </div>
+
+            <div class="form-group">
+                <label for="organization">Kurum</label>
+                <select id="organization" asp-for="OrganisationId" required>
+                    <option value="">Kurum seçin</option>
+                    @foreach (var kurum in ViewBag.Kurumlar)
+                    {
+                        <option value="@kurum.OrganisationId">@kurum.OrganisationName</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="importance">Önem Durumu</label>
+                    <select id="importance" asp-for="ImportanceStatus" required>
+                        <option value="">Seçin</option>
+                        <option value="true">Önemli</option>
+                        <option value="false">Önemsiz</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="urgency">Aciliyet Durumu</label>
+                    <select id="urgency" asp-for="UrgencyStatus" required>
+                        <option value="">Seçin</option>
+                        <option value="true">Acil</option>
+                        <option value="false">Acil Değil</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <a href="~/Mission/Index/" class="btn btn-secondary">İptal</a>
+                <button type="submit" class="btn btn-primary">Ekle</button>
+            </div>
+        </form>
+    </div>
+</div>
