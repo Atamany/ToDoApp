@@ -1,7 +1,7 @@
 <h1> 🚀 TaskMaster - ToDoApp</h1>
 <h3>Asp.Net Core ile hazırlanmış, Aciliyet ve Önem Sıralı Yapılacaklar Listesi Uygulaması</h3><br />
 <h2>Projeye Genel Bakış</h2>
-<p>👤 Kullanıcı Arayüzü: Şık ev sade bir tasarım, yapılacaklar listenizin karmaşıklığına bir son verin.</p>
+<p>👤 Kullanıcı Arayüzü: Şık ve sade bir tasarım, yapılacaklar listenizin karmaşıklığına bir son verin.</p>
 
 
 <h2>Kullanılan Teknolojiler ve Uygulamalar</h2>
